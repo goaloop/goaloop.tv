@@ -1,9 +1,23 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Goaloop TV | Govies&trade; - Every Goal Tells a Story&trade;</title>
+    <title>Goaloop TV | Govies™ - Every Goal Tells a Story™</title>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
     <meta content="index,follow" name="robots" />
+    <meta name="robots" content="noai, noimageai">
+    <meta name="googlebot" content="noai, noimageai">
+    <meta name="google" content="nositelinkssearchbox, notranslate">
+    <meta name="ChatGPT" content="noindex">
+    <meta name="CCBot" content="nofollow">
+    <meta name="Claude-Web" content="noindex">
+    <meta name="GPTBot" content="noindex">
+    <meta name="AI2Bot" content="noindex">
+    <meta name="FacebookBot" content="noindex">
+    <meta name="Diffbot" content="noindex">
+    <meta name="PerplexityBot" content="noindex">
+    <meta name="Perplexity" content="noindex">
+    <meta name="DeepSeek" content="noindex">
+    <meta name="DeepSeekBot" content="noindex">
     <meta content="YOuDVrMl79xuwVKolj_7AYOhEfniNQ95rhh8mqcwsOU" name="google-site-verification" />
     <meta content="Every goal tells a story and instantly becomes a 'goal movie' on Goaloop.com – a Govie™. Govies™ are shareable, a fun way to broadcast progress while you focus on pursuing your goals. #Selfie? #Govie! Goaloop is patent pending." name="description" />
     <meta content="Lori Terrizzi" name="author" />
@@ -13,15 +27,15 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://goaloop.tv/" />
-    <meta property="og:title" content="Goaloop TV | Goviesâ„¢ - Every Goal Tells a Storyâ„¢" />
-    <meta property="og:description" content="Every goal tells a story and instantly becomes a 'goal movie' on GoaloopÂ® â€" a Govieâ„¢. Govies are shareable, a fun way to broadcast your progress while you stay focused on pursuing your goals. #Selfie? #Govie!" />
+    <meta property="og:title" content="Goaloop TV | Govies™ - Every Goal Tells a Story™" />
+    <meta property="og:description" content="Every goal tells a story and instantly becomes a 'goal movie' on Goaloop® – a Govie™. Govies are shareable, a fun way to broadcast your progress while you stay focused on pursuing your goals. #Selfie? #Govie!" />
     <meta property="og:image" content="https://goaloop.tv/images/Goaloop.TV-Logo.png" />
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://goaloop.tv/" />
-    <meta property="twitter:title" content="Goaloop TV | Goviesâ„¢ - Every Goal Tells a Storyâ„¢" />
-    <meta property="twitter:description" content="Every goal tells a story and instantly becomes a 'goal movie' on GoaloopÂ® â€" a Govieâ„¢. Govies are shareable, a fun way to broadcast your progress while you stay focused on pursuing your goals. #Selfie? #Govie!" />
+    <meta property="twitter:title" content="Goaloop TV | Govies™ - Every Goal Tells a Story™" />
+    <meta property="twitter:description" content="Every goal tells a story and instantly becomes a 'goal movie' on Goaloop® – a Govie™. Govies are shareable, a fun way to broadcast your progress while you stay focused on pursuing your goals. #Selfie? #Govie!" />
     <meta property="twitter:image" content="https://goaloop.tv/images/Goaloop.TV-Logo.png" />
     
     <!-- Structured Data / Schema.org -->
@@ -33,8 +47,8 @@
       "alternateName": ["Goaloop TV", "The Goal Market"],
       "url": "https://goaloop.tv",
       "logo": "https://goaloop.tv/images/Goaloop.TV-Logo.png",
-      "description": "The Goal MarketÂ® - Connecting the World Through GoalsÂ®. Every goal tells a story and becomes a shareable 'Govie' goal movie.",
-      "slogan": "Every Goal Tells a Storyâ„¢",
+      "description": "The Goal Market® - Connecting the World Through Goals®. Every goal tells a story and becomes a shareable 'Govie' goal movie.",
+      "slogan": "Every Goal Tells a Story™",
       "founder": {
         "@type": "Person",
         "name": "Lori Terrizzi",
@@ -46,9 +60,9 @@
           "url": "https://www.columbia.edu"
         }
       },
-      "industry": "Technology",
-      "keywords": ["goal tracking", "productivity", "social media", "goal achievement", "Govies", "goal movies"],
-      "knowsAbout": ["Goal Setting", "Productivity Tools", "Social Media Sharing", "Goal Achievement", "Personal Development"],
+      "industry": ["Technology", "Health", "Art", "Philosophy", "Peace"],
+      "keywords": ["how to set goals", "SMART goals", "goal setting", "goal tracking", "new year goals", "personal goals", "achieve goals", "goal planner", "habit tracking", "productivity", "motivation"],
+      "knowsAbout": ["Goal Setting", "Collaboration", "Cooperation", "Productivity Tools", "Goal Achievement", "Personal Development", "Shared Value", "Equality", "Justice"],
       "parentOrganization": {
         "@type": "Organization",
         "name": "Goaloop",
@@ -114,15 +128,63 @@
     }
     </script>
     
-    <link href="https://use.typekit.net/flc5jkv.css" rel="stylesheet" />
+    <!-- <link href="https://use.typekit.net/flc5jkv.css" rel="stylesheet" /> -->
+    
+    <!-- AI/Bot Protection -->
+    <script>
+    // Detect and block specific AI/scraping bots (but allow artifact viewers)
+    (function() {
+        var userAgent = navigator.userAgent.toLowerCase();
+        var specificBots = ['gptbot', 'chatgpt', 'openai', 'perplexitybot', 'deepseekbot', 'ccbot', 'diffbot'];
+        var isBot = false;
+        
+        for (var i = 0; i < specificBots.length; i++) {
+            if (userAgent.indexOf(specificBots[i]) !== -1) {
+                isBot = true;
+                break;
+            }
+        }
+        
+        if (isBot) {
+            document.body.style.display = 'none';
+            document.body.innerHTML = '<p style="color: white; text-align: center; margin-top: 200px;">Access restricted. Please visit goaloop.com</p>';
+        }
+        
+        // Disable text selection and right-click for protection
+        document.addEventListener('selectstart', function(e) { e.preventDefault(); });
+        document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+        document.addEventListener('dragstart', function(e) { e.preventDefault(); });
+    })();
+    </script>
+    
     <style type="text/css">
         body {
             background-color: #000;
             margin: 0;
-            padding: 112px 20px 20px 20px;
+            padding: 100px 20px 20px 20px;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
         }
         a {
             text-decoration: none;
+        }
+        
+        /* Disable text selection and copying */
+        * {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        
+        /* Hide from print and screen readers when needed */
+        @media print {
+            body { display: none !important; }
         }
         .logo-container {
             text-align: center;
@@ -135,9 +197,9 @@
             margin-bottom: 12px;
         }
         .main-content-table {
-            width: 78%;
-            max-width: 1100px;
-            min-width: 750px;
+            width: 74%;
+            max-width: 1050px;
+            min-width: 700px;
             border-collapse: collapse;
         }
         .main-content-table td {
@@ -198,10 +260,20 @@
 </head>
 <body link="#00c5e5" text="#fffff" vlink="#00d8fd">
     
+    <!-- Copyright and IP Protection Notice -->
+    <div style="display: none;">
+        <!-- 
+        COPYRIGHT NOTICE: All content on this page including text, images, design, 
+        trademarks, and intellectual property are owned by Goaloop and protected by 
+        copyright law. Unauthorized use, reproduction, or AI training is strictly 
+        prohibited. Govies™ and related trademarks are proprietary to Goaloop.
+        -->
+    </div>
+    
     <!-- Logo Section - Centered -->
     <div class="logo-container">
         <a href="https://goaloop.com">
-            <img align="absmiddle" alt="GOALOOP TV - Goviesâ„¢ | Every Goal Tells a Storyâ„¢" longdesc="http://goaloop.tv" src="images/Goaloop.TV-Logo.png" width="600" />
+            <img align="absmiddle" alt="GOALOOP TV - Govies™ | Every Goal Tells a Story™" longdesc="http://goaloop.tv" src="images/Goaloop.TV-Logo.png" width="600" />
         </a>
     </div>
 
@@ -213,14 +285,12 @@
                     <td class="icon-cell">
                         <img src="images/Goaloop-g-radio-signals-teal.png" width="105" height="105" />
                     </td>
-                    <td class="text-cell">
-                        <font color="white" face="brandon-grotesque, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-style="normal" font-weight="100" size="5">
-                            Every goal tells a story and instantly becomes a &lsquo;goal movie&rsquo; on 
-                            <a href="https://goaloop.com/signUp?ref=83de74e8-7cfe-41f0-8c71-f0cd4207986b&amp;refPId=d27f87e18d737e8e649d4774033d6d4c" target="_blank">Goaloop</a> 
-                            &ndash; a Govie&trade;.<br /><br />
-                            Govies&trade; are always current, automatically incorporating progress toward a goal.<br /><br />
-                            #Govies are shareable, an easy way to let others know of progress. Selfie? #Govie!
-                        </font>
+                    <td class="text-cell" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-weight: 100; font-size: 24px; color: white;">
+                        Every goal tells a story and instantly becomes a &lsquo;goal movie&rsquo; on 
+                        <a href="https://goaloop.com/signUp?ref=83de74e8-7cfe-41f0-8c71-f0cd4207986b&amp;refPId=d27f87e18d737e8e649d4774033d6d4c" target="_blank">Goaloop</a> 
+                        &ndash; a Govie&trade;.<br /><br />
+                        Govies&trade; are always current, automatically incorporating progress toward a goal.<br /><br />
+                        #Govies are shareable, an easy way to let others know of progress. Selfie? #Govie!
                     </td>
                 </tr>
             </tbody>
@@ -228,21 +298,19 @@
     </div>
 
     <!-- Additional Text Below Table -->
-    <div style="text-align: center; margin-bottom: 12px; line-height: 1.8;">
-        <font color="white" face="brandon-grotesque, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-style="normal" font-weight="100" size="5">
-            On <a href="https://goaloop.com/" target="_blank">Goaloop.com</a>, click any goal image and the Govie&trade; will play.<br /><br />
-            On <a href="https://goaloop.tv/">Goaloop.TV</a>, Govies&trade; will stream into categories,<br />
-            showcasing Goaloopers to inspire others to go after their own goals.
-        </font>
+    <div style="text-align: center; margin-bottom: 12px; line-height: 1.8; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-weight: 100; font-size: 24px; color: white;">
+        On <a href="https://goaloop.com/" target="_blank">Goaloop.com</a>, click any goal image and the Govie&trade; will play.<br /><br />
+        On <a href="https://goaloop.tv/">Goaloop.TV</a>, Govies&trade; will stream into categories,<br />
+        showcasing Goaloopers to inspire others to go after their own goals.
     </div>
 
     <!-- Video Section -->
-    <div style="text-align: center; margin-top: 2px;">
+    <div style="text-align: center; margin-top: 20px;">
         <iframe allowfullscreen="" frameborder="0" height="450" mozallowfullscreen="" src="https://player.vimeo.com/video/304843648" webkitallowfullscreen="" width="800"></iframe>
     </div>
 
     <!-- Footer -->
-    <footer style="margin-top: 60px; padding: 40px 20px; border-top: 1px solid #333; text-align: center; color: #666; font-family: brandon-grotesque, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
+    <footer style="margin-top: 60px; padding: 40px 20px; border-top: 1px solid #333; text-align: center; color: #666; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
         <p style="margin-bottom: 15px; font-size: 14px;">
             <a href="https://goaloop.com" target="_blank" style="color: #958afa; text-decoration: none;">Goaloop.com</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
             <a href="https://goaloop.tv" style="color: #00c5e5; text-decoration: none;">Goaloop.TV</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
@@ -262,16 +330,6 @@
             &copy; 2025 All rights reserved&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;GOALOOP - The Goal Market&reg;, Connecting the World Through Goals&reg;
         </p>
     </footer>
-
-    <!-- Copyright and IP Protection Notice -->
-    <div style="display: none;">
-        <!-- 
-        COPYRIGHT NOTICE: All content on this page including text, images, design, 
-        trademarks, and intellectual property are owned by Goaloop and protected by 
-        copyright law. Unauthorized use, reproduction, or AI training is strictly 
-        prohibited. Govies™ and related trademarks are proprietary to Goaloop.
-        -->
-    </div>
 
     <script type="text/javascript">
         // Additional bot detection and content protection
