@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Goaloop TV | Govies&trade; - Every Goal Tells a Story&trade;</title>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <meta content="index,follow" name="robots" />
+    <meta content="YOuDVrMl79xuwVKolj_7AYOhEfniNQ95rhh8mqcwsOU" name="google-site-verification" />
+    <meta content="Every goal tells a story and instantly becomes a 'goal movie' on Goaloop – a Govie. Govies are shareable on social media. #Selfie? #Govie!" name="description" />
+    <meta content="Lori Terrizzi" name="author" />
+    <link href="https://use.typekit.net/flc5jkv.css" rel="stylesheet" />
+    <style type="text/css">
+        body {
+            background-color: #000;
+            margin: 0;
+            padding: 20px;
+        }
+        a {
+            text-decoration: none;
+        }
+        .logo-container {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .content-table {
+            width: 80%;
+            margin: 0 auto;
+            table-layout: fixed;
+        }
+        .text-column {
+            width: 85%;
+            text-align: right;
+            vertical-align: top;
+            padding-right: 30px;
+            line-height: 1.5;
+        }
+        .icon-column {
+            width: 15%;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .video-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body link="#00c5e5" text="#fffff" vlink="#00d8fd">
+    
+    <!-- Logo Section - Centered on its own line -->
+    <div class="logo-container">
+        <a href="https://goaloop.com">
+            <img align="absmiddle" alt="GOALOOP TV" longdesc="http://goaloop.tv" src="images/Goaloop.TV-Logo.png" width="600" />
+        </a>
+    </div>
+
+    <!-- Content Table - 70% width, two columns -->
+    <table border="0" class="content-table">
+        <tbody>
+            <tr>
+                <td class="text-column">
+                    <font color="white" face="brandon-grotesque, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-style="normal" font-weight="100" size="5">
+                        Every goal tells a story and instantly becomes a &lsquo;goal movie&rsquo; on 
+                        <a href="https://goaloop.com/signUp?ref=83de74e8-7cfe-41f0-8c71-f0cd4207986b&amp;refPId=d27f87e18d737e8e649d4774033d6d4c" target="_blank">Goaloop</a> 
+                        &ndash; a Govie&trade;.<br />
+                        Govies are always current, automatically and instantly incorporating progress toward a goal.<br />
+                        #Govies are shareable, an easy way to let others know of progress. Selfie? Govie!<br />
+                        On <a href="https://goaloop.com/" target="_blank">Goaloop.com</a>, click any goal image and the Govie&trade; will play. On <a href="https://goaloop.tv/">Goaloop.TV</a>, Govies will<br />
+                        stream into categories, showcasing Goaloopers to inspire others to go after their own goals.
+                    </font>
+                </td>
+                <td class="icon-column">
+                    <img src="images/Goaloop-g-radio-signals-teal.png" style="width: 230px; height: 229px;" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Video Section -->
+    <div class="video-container">
+        <iframe allowfullscreen="" frameborder="0" height="450" mozallowfullscreen="" src="https://player.vimeo.com/video/304843648" webkitallowfullscreen="" width="800"></iframe>
+    </div>
+
+    <!-- Footer -->
+    <footer style="margin-top: 60px; padding: 40px 20px; border-top: 1px solid #333; text-align: center; color: #666; font-family: brandon-grotesque, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
+        <p style="margin-bottom: 15px; font-size: 14px;">
+            <a href="https://goaloop.com" style="color: #00c5e5; text-decoration: none;">Goaloop.com</a> | 
+            <a href="https://goaloop.tv" style="color: #00c5e5; text-decoration: none;">Goaloop.TV</a> | 
+            <a href="mailto:goaloopguide@goaloop.com" style="color: #00c5e5; text-decoration: none;">Contact</a>
+        </p>
+        <p style="margin: 0; font-size: 11px; color: #555;">
+            &copy; 2025 All rights reserved. | GOALOOP - The Goal Market&reg;, Connecting the World Through Goals&reg;
+        </p>
+    </footer>
+
+</body>
+
+<script type="text/javascript">
+    var can, ctx, step = 50, steps = 255;
+    delay = 20;
+    var rgbstep = 50;
+    
+    function init() {
+        can = document.getElementById("MyCanvas1");
+        ctx= can.getContext("2d");
+        ctx.fillStyle = "blue";
+        ctx.font = "40pt Helvetica";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        Textfadeup(); 
+    }
+    
+    function Textfadeup() {
+        rgbstep++;
+        ctx.clearRect(0, 0, can.width, can.height);
+        ctx.fillStyle = "rgb(" + rgbstep + "," + rgbstep + "," + rgbstep + ")"
+        ctx.fillText("WELCOME", 150, 100);
+        if (rgbstep < 255)
+            var t = setTimeout('Textfadeup()', 10);
+        if (rgbstep == 255) {
+            Textfadedown();
+        }
+    }
+    
+    function Textfadedown() {
+        rgbstep=rgbstep-1;
+        ctx.clearRect(0, 0, can.width, can.height);
+        ctx.fillStyle = "rgb(" + rgbstep + "," + rgbstep + "," + rgbstep + ")"
+        ctx.fillText("WELCOME", 150, 100);
+        if (rgbstep > 80)
+            var t = setTimeout('Textfadedown()', 10);
+        if (rgbstep == 80) {
+            Textfadeup();
+        }
+    } 
+</script>
+</html>
