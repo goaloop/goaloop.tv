@@ -207,10 +207,59 @@
         
         /* Mobile responsive adjustments */
         @media screen and (max-width: 768px) {
+            body {
+                padding: 50px 15px 15px 15px;
+            }
+            
+            .logo-container img {
+                max-width: 90%;
+                height: auto;
+            }
+            
+            .unified-text {
+                font-size: 18px;
+                padding: 0 10px;
+            }
+            
             iframe {
                 width: 95% !important;
-                max-width: 400px !important;
-                height: 225px !important;
+                max-width: 100% !important;
+                height: 250px !important;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            body {
+                padding: 40px 10px 10px 10px;
+            }
+            
+            .logo-container img {
+                max-width: 95%;
+                width: 300px;
+            }
+            
+            .unified-text {
+                font-size: 16px;
+                line-height: 1.5;
+            }
+            
+            iframe {
+                width: 100% !important;
+                height: 200px !important;
+            }
+        }
+        
+        @media screen and (max-width: 360px) {
+            .logo-container img {
+                width: 280px;
+            }
+            
+            .unified-text {
+                font-size: 15px;
+            }
+            
+            iframe {
+                height: 180px !important;
             }
         }
     </style>
