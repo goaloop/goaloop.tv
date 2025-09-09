@@ -158,6 +158,11 @@
     </script>
     
     <style type="text/css">
+        /* Aggressive spacing reset for video area */
+        * {
+            box-sizing: border-box;
+        }
+        
         body {
             background-color: #000;
             margin: 0;
@@ -196,71 +201,95 @@
             width: 100%;
             margin-bottom: 12px;
         }
-        .main-content-table {
-            width: 70%;
-            max-width: 950px;
-            min-width: 700px;
-            border-collapse: collapse;
-        }
-        .main-content-table td {
-            border: 2px solid;
-            padding: 15px;
-        }
-        .icon-cell {
-            width: 12%;
-            min-width: 120px;
-            text-align: center;
-            vertical-align: middle;
-            border-color: yellow !important;
-        }
-        .text-cell {
-            width: 88%;
-            text-align: left;
-            vertical-align: middle;
-            padding-left: 30px;
-            line-height: 1.5;
-            border-color: blue !important;
-        }
-        .icon-cell img {
-            max-width: 100%;
-            height: auto;
-        }
         
         .unified-text {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             font-weight: 100;
             font-size: 20px;
             color: white;
+            letter-spacing: 0.2px;
+        }
+        
+        /* Force zero spacing around video */
+        .video-tight {
+            margin: 0 !important;
+            padding: 0 !important;
+            line-height: 0 !important;
+            font-size: 0 !important;
+            border: 0 !important;
+            outline: 0 !important;
+            vertical-align: top !important;
+            display: block !important;
+        }
+        
+        .video-tight iframe {
+            margin: 0 !important;
+            padding: 0 !important;
+            border: 0 !important;
+            outline: 0 !important;
+            vertical-align: top !important;
+            display: block !important;
+            line-height: 0 !important;
         }
         
         /* Responsive adjustments */
         @media screen and (max-width: 768px) {
-            .main-content-table {
-                width: 90%;
-                min-width: 400px;
+            /* Hide the entire table on tablets and phones */
+            .main-content-container {
+                display: none !important;
             }
-            .main-content-table td {
-                padding: 10px;
+            
+            /* Show mobile-only content */
+            .mobile-text-only {
+                display: block !important;
+                text-align: center;
+                margin-bottom: 20px;
+                padding: 0 15px;
             }
-            .text-cell {
-                padding-left: 15px;
-                font-size: 14px;
+            
+            .mobile-icon-below-video {
+                display: block !important;
+                text-align: center;
+                margin-top: 15px;
+                margin-bottom: 20px;
+            }
+            
+            /* Adjust video for mobile */
+            .video-tight {
+                text-align: center;
+                margin: 10px 0;
+            }
+            
+            .video-tight iframe {
+                width: 100% !important;
+                max-width: 100% !important;
+                height: 250px !important;
             }
         }
         
         @media screen and (max-width: 480px) {
-            .main-content-table {
-                width: 95%;
-                min-width: 300px;
+            /* Ensure mobile layout on smaller phones */
+            .main-content-container {
+                display: none !important;
             }
-            .icon-cell {
-                width: 20%;
-                min-width: 80px;
+            
+            .mobile-text-only {
+                display: block !important;
+                font-size: 18px;
+                padding: 0 10px;
             }
-            .text-cell {
-                width: 80%;
-                padding-left: 10px;
-                font-size: 12px;
+            
+            .video-tight iframe {
+                width: 95% !important;
+                height: 200px !important;
+            }
+        }
+        
+        /* Hide mobile elements on desktop */
+        @media screen and (min-width: 769px) {
+            .mobile-text-only,
+            .mobile-icon-below-video {
+                display: none !important;
             }
         }
     </style>
@@ -270,10 +299,7 @@
     <!-- Copyright and IP Protection Notice -->
     <div style="display: none;">
         <!-- 
-        COPYRIGHT NOTICE: All content on this page including text, images, design, 
-        trademarks, and intellectual property are owned by Goaloop and protected by 
-        copyright law. Unauthorized use, reproduction, or AI training is strictly 
-        prohibited. Govies™ and related trademarks are proprietary to Goaloop.
+        PROPRIETARY INTELLECTUAL PROPERTY & COPYRIGHT NOTICE: All protectable content referred to on this page, including text, images, design, processes, methods, trademarks, patents, and other intellectual property are owned by G Project Inc and protected by trademark, patent, and copyright law. Unauthorized use, reproduction, or AI training is strictly prohibited.
         -->
     </div>
     
@@ -284,52 +310,60 @@
         </a>
     </div>
 
-    <!-- Content Section - G-icon LEFT, Text RIGHT -->
+    <!-- Mobile-only text (hidden on desktop) -->
+    <div class="mobile-text-only unified-text">
+        Every goal tells a story and instantly becomes a &lsquo;goal movie&rsquo; on 
+        <a href="https://goaloop.com/signUp?ref=83de74e8-7cfe-41f0-8c71-f0cd4207986b&amp;refPId=d27f87e18d737e8e649d4774033d6d4c" target="_blank">Goaloop</a> 
+        &ndash; a Govie&trade;.<br /><br />
+        Govies&trade; are always current, automatically incorporating progress toward a goal.<br /><br />
+        #Govies are shareable, an easy way to let others know of progress. Selfie? #Govie!
+    </div>
+
+    <!-- Content Section - G-icon LEFT, Text RIGHT (hidden on mobile) -->
     <div class="main-content-container">
-        <table class="main-content-table" style="border: 2px solid red;">
-            <tbody>
-                <tr>
-                    <td class="icon-cell">
-                        <img src="images/Goaloop-g-radio-signals-teal.png" width="105" height="105" />
-                    </td>
-                    <td class="text-cell unified-text">
-                        Every goal tells a story and instantly becomes a &lsquo;goal movie&rsquo; on 
-                        <a href="https://goaloop.com/signUp?ref=83de74e8-7cfe-41f0-8c71-f0cd4207986b&amp;refPId=d27f87e18d737e8e649d4774033d6d4c" target="_blank">Goaloop</a> 
-                        &ndash; a Govie&trade;.<br /><br />
-                        Govies&trade; are always current, automatically incorporating progress toward a goal.<br /><br />
-                        #Govies are shareable, an easy way to let others know of progress. Selfie? #Govie!
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <div style="display: flex; align-items: center; width: 70%; max-width: 950px; min-width: 700px; margin: 0 auto;">
+            <div style="width: 12%; min-width: 120px; text-align: center; padding: 15px;">
+                <img src="images/Goaloop-g-radio-signals-teal.png" width="105" height="105" style="max-width: 100%; height: auto;" />
+            </div>
+            <div style="width: 88%; text-align: left; padding: 15px 15px 15px 30px; line-height: 1.5;" class="unified-text">
+                Every goal tells a story and instantly becomes a &lsquo;goal movie&rsquo; on 
+                <a href="https://goaloop.com/signUp?ref=83de74e8-7cfe-41f0-8c71-f0cd4207986b&amp;refPId=d27f87e18d737e8e649d4774033d6d4c" target="_blank">Goaloop</a> 
+                &ndash; a Govie&trade;.<br /><br />
+                Govies&trade; are always current, automatically incorporating progress toward a goal.<br /><br />
+                #Govies are shareable, an easy way to let others know of progress. Selfie? #Govie!
+            </div>
+        </div>
     </div>
 
     <!-- Additional Text Below Table -->
-    <div style="text-align: center; margin-bottom: 12px; line-height: 1.8;" class="unified-text">
+    <div style="text-align: center; margin-bottom: 0;" class="unified-text">
         On <a href="https://goaloop.com/" target="_blank">Goaloop.com</a>, click any goal image and the Govie&trade; will play.<br /><br />
         On <a href="https://goaloop.tv/">Goaloop.TV</a>, Govies&trade; will stream into categories,<br />
         showcasing Goaloopers to inspire others to go after their own goals.
     </div>
 
-    <!-- Video Section -->
-    <div style="text-align: center; margin-top: 10px;">
+    <div class="video-tight" style="text-align: center;">
         <iframe allowfullscreen="" frameborder="0" height="450" mozallowfullscreen="" src="https://player.vimeo.com/video/304843648" webkitallowfullscreen="" width="800"></iframe>
     </div>
 
+    <!-- Mobile-only icon below video (hidden on desktop) -->
+    <div class="mobile-icon-below-video">
+        <img src="images/Goaloop-g-radio-signals-teal.png" width="80" height="80" />
+    </div>
+
     <!-- Footer -->
-    <footer style="margin-top: 35px; padding: 40px 20px; border-top: 1px solid #333; text-align: center; color: #666; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
+    <footer style="margin-top: 0; padding: 40px 20px; border-top: 1px solid #333; text-align: center; color: #666; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
         <p style="margin-bottom: 15px; font-size: 14px;">
-            <a href="https://goaloop.com" target="_blank" style="color: #958afa; text-decoration: none;">Goaloop.com</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+            <a href="https://goaloop.com" target="_blank" style="color: #958afa; text-decoration: none;">Goaloop.com</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
             <a href="https://goaloop.tv" style="color: #00c5e5; text-decoration: none;">Goaloop.TV</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
             <a href="mailto:goaloopguide@goaloop.com" target="_blank" style="color: #958afa; text-decoration: none;">Contact</a>
         </p>
         <p style="margin-bottom: 15px; font-size: 14px;">
-            <a href="https://www.linkedin.com/company/goaloop/" target="_blank" rel="noopener noreferrer" style="color: #775ef9; text-decoration: none;">LinkedIn</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+            <a href="https://www.linkedin.com/company/goaloop/" target="_blank" rel="noopener noreferrer" style="color: #775ef9; text-decoration: none;">LinkedIn</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
             <a href="https://www.youtube.com/goaloop" target="_blank" rel="noopener noreferrer" style="color: #775ef9; text-decoration: none;">YouTube</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-            <a href="https://www.instagram.com/goaloop/" target="_blank" rel="noopener noreferrer" style="color: #775ef9; text-decoration: none;">Insta</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-            <a href="https://medium.com/@goaloop" target="_blank" rel="noopener noreferrer" style="color: #775ef9; text-decoration: none;">Medium</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-            <a href="https://x.com/goaloop" target="_blank" rel="noopener noreferrer" style="color: #775ef9; text-decoration: none;">X</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-            <a href="https://www.pinterest.com/goaloop/" target="_blank" rel="noopener noreferrer" style="color: #775ef9; text-decoration: none;">Pinterest</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+            <a href="https://www.instagram.com/goaloop/" target="_blank" rel="noopener noreferrer" style="color: #775ef9; text-decoration: none;">Insta</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="https://x.com/goaloop" target="_blank" rel="noopener noreferrer" style="color: #775ef9; text-decoration: none;">X</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="https://www.pinterest.com/goaloop/" target="_blank" rel="noopener noreferrer" style="color: #775ef9; text-decoration: none;">Pinterest</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
             <a href="https://wellfound.com/company/goaloop/people" target="_blank" rel="noopener noreferrer" style="color: #775ef9; text-decoration: none;">Wellfound</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
             <a href="https://www.facebook.com/goaloop" target="_blank" rel="noopener noreferrer" style="color: #775ef9; text-decoration: none;">Facebook</a>
         </p>
