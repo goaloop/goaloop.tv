@@ -341,12 +341,17 @@
 </head>
 <body>
 <style>
+#video-panel[data-fs] { position: fixed !important; inset: 0 !important; z-index: 9999 !important; border-radius: 0 !important; border: 0 !important; display: flex !important; flex-direction: column !important; background: #000 !important; }
+#video-panel[data-fs] [data-mk-vid-box] { padding-top: 0 !important; flex: 1 1 auto !important; }
+#video-fs:hover { color: #5fe500 !important; border-color: rgba(95,229,0,0.5) !important; }
+
 /* Mobile portrait layout (added outside <head>; head is unchanged) */
 @media (max-width: 760px) {
   body div[data-mk-col2] { padding-top: 0 !important; }
   body div[data-mk-vid-box] { padding-top: 56.25% !important; }
   body > div > main > section:nth-of-type(1) h1 { text-align: center !important; }
-  body > div > main > section:nth-of-type(1) h1 span { width: 0 !important; overflow: visible !important; }
+  body > div > main > section:nth-of-type(1) h1 span { width: 0 !important; overflow: visible !important; margin-left: 0 !important; letter-spacing: 0 !important; }
+  body > div > main > section:nth-of-type(1) h1 { text-wrap: balance !important; padding-right: 0 !important; }
   body > div > main > section:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) { justify-content: center !important; }
   body > div > main > section:nth-of-type(1) > div:first-child > div { justify-content: center !important; }
   body span[data-mk-desk] { display: none !important; }
@@ -408,7 +413,7 @@
   body > div > main > section:nth-of-type(4) > p span[data-mk-comma] { display: none !important; }
   body > div > main > section:nth-of-type(4) > p br[data-mk-break] { display: inline !important; }
 
-  body > div > main > section:nth-of-type(4) > p { text-align: center !important; margin-bottom: 21.6px !important; }
+  body > div > main > section:nth-of-type(4) > p { line-height: 1.4 !important; text-align: center !important; margin-bottom: 21.6px !important; }
   body > div > main > section:nth-of-type(3) > div:nth-of-type(2) > div > div:last-child { text-align: center !important; }
   body > div > footer > div { padding: 26px 18px 34px !important; gap: 20px 24px !important; justify-content: center !important; }
   body > div > footer nav span[data-mk-social] { display: block !important; width: 100% !important; height: 0 !important; }
@@ -422,6 +427,11 @@ body span[data-mk-mob] { display: none; }
 
 /* Phone landscape (horizontal) */
 @media (orientation: landscape) and (max-height: 520px) {
+  body > div > main > section:nth-of-type(1) h1 { text-align: left !important; }
+  body > div > main > section:nth-of-type(1) h1 span { width: auto !important; }
+  body > div > main > section:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) { justify-content: flex-start !important; }
+  body > div > main > section:nth-of-type(1) > div:first-child > div { justify-content: flex-start !important; }
+  body > div > main > section:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) span { font-size: 28px !important; }
   body div[data-mk-col2] { padding-top: 0 !important; }
   body div[data-mk-vid-box] { padding-top: 56.25% !important; }
   body > div > main > section:nth-of-type(3) > div:nth-of-type(2) {
@@ -491,13 +501,17 @@ body span[data-mk-mob] { display: none; }
         <div style="position: relative; display: flex; align-items: center; gap: 14px; padding-top: 9px; margin-bottom: 19.6px;">
           <span style="font-size: 28px; font-weight: 800; letter-spacing: 0.00864em; line-height: 1;">#Selfie? #Govie!</span>
         </div>
-        <div style="position: relative; border: 1px solid rgba(232,239,238,0.14); border-radius: 14px; overflow: hidden; background: #040810;">
+        <div id="video-panel" style="position: relative; border: 1px solid rgba(232,239,238,0.14); border-radius: 14px; overflow: hidden; background: #040810;">
           <div style="display: flex; align-items: center; gap: 10px; padding: 12px 16px; border-bottom: 1px solid rgba(232,239,238,0.10); font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(232,239,238,0.45);">
             <span style="width: 7px; height: 7px; border-radius: 999px; background: #5fe500; display: inline-block;"></span>
             Now playing
+            <button type="button" id="video-fs" aria-label="View video full screen" style="margin-left: auto; display: inline-flex; align-items: center; gap: 7px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(232,239,238,0.45); background: transparent; border: 0; border-radius: 999px; padding: 0; cursor: pointer; min-height: 30px;">
+              <span aria-hidden="true" style="font-size: 13px; line-height: 1;">&#10530;</span>
+              <span id="video-fs-label">Full screen</span>
+            </button>
           </div>
           <div data-mk-vid-box style="position: relative; padding-top: calc(28.5714% + 160px);">
-            <iframe src="https://player.vimeo.com/video/1219348076" title="GOALOOP &mdash; What Do You Desire?" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position: absolute; inset: 0; width: 100%; height: 100%; border: 0;"></iframe>
+            <iframe src="https://player.vimeo.com/video/1219348076?fullscreen=1" title="GOALOOP &mdash; What Do You Desire?" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position: absolute; inset: 0; width: 100%; height: 100%; border: 0;"></iframe>
           </div>
         </div>
       </div>
@@ -529,25 +543,25 @@ body span[data-mk-mob] { display: none; }
           <div style="position: relative; padding-top: 56.25%;">
             <img src="images/status-underway.png" alt="Goal status symbol: goal is underway" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; padding: 14px; box-sizing: border-box; transform-origin: center center; transform: scale(1);">
           </div>
-          <div style="padding: 14px 16px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(232,239,238,0.45);">goal is underway</div>
+          <div style="padding: 14px 16px; font-family: 'JetBrains Mono', monospace; font-size: 12.65px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(232,239,238,0.45);">goal is underway</div>
         </div>
         <div style="border: 1px solid rgba(232,239,238,0.12); border-radius: 10px; overflow: hidden; background: #040810;">
           <div style="position: relative; padding-top: 56.25%;">
             <img src="images/status-hit-a-snag.png" alt="Goal status symbol: goal hit a snag" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; padding: 14px; box-sizing: border-box; transform-origin: center center; transform: scale(1);">
           </div>
-          <div style="padding: 14px 16px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(232,239,238,0.45);">goal hit a snag</div>
+          <div style="padding: 14px 16px; font-family: 'JetBrains Mono', monospace; font-size: 12.65px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(232,239,238,0.45);">goal hit a snag</div>
         </div>
         <div style="border: 1px solid rgba(232,239,238,0.12); border-radius: 10px; overflow: hidden; background: #040810;">
           <div style="position: relative; padding-top: 56.25%;">
             <img src="images/status-someday-soft.png" alt="Goal status symbol: someday goal" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; padding: 14px; box-sizing: border-box; transform-origin: center center; transform: translateY(0.9%) scale(0.847); filter: brightness(0.91);">
           </div>
-          <div style="padding: 14px 16px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(232,239,238,0.45);">someday goal</div>
+          <div style="padding: 14px 16px; font-family: 'JetBrains Mono', monospace; font-size: 12.65px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(232,239,238,0.45);">someday goal</div>
         </div>
         <div style="border: 1px solid rgba(232,239,238,0.12); border-radius: 10px; overflow: hidden; background: #040810;">
           <div style="position: relative; padding-top: 56.25%;">
             <img src="images/status-gift-coin.png" alt="Goal status symbol: gift a goal" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; padding: 14px; box-sizing: border-box; transform-origin: center center; transform: scale(0.977);">
           </div>
-          <div style="padding: 14px 16px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(232,239,238,0.45);">gift a goal</div>
+          <div style="padding: 14px 16px; font-family: 'JetBrains Mono', monospace; font-size: 12.65px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(232,239,238,0.45);">gift a goal</div>
         </div>
       </div>
     </section>
@@ -561,7 +575,7 @@ body span[data-mk-mob] { display: none; }
         <p style="font-size: 24px; line-height: 1.35; margin: 0; max-width: 30ch; font-weight: 600; letter-spacing: -0.0092em;">#Selfie? #Govie!</p>
         <a href="https://goaloop.io" target="_blank" rel="noopener" class="cta-btn" style="margin-left: auto; font-size: 16px; font-weight: 600; color: #080d14; background: #5fe500; padding: 15px 26px; border-radius: 999px; border: 1.5px solid #5fe500;">Join Goaloop</a>
       </div>
-      <p style="font-family: 'JetBrains Mono', monospace; font-size: 24px; line-height: 1.4; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(232,239,238,0.52); margin: 48px 0 0;">GOALOOP &mdash; The Goal Market<span style="font-size: 0.62em; vertical-align: 0.8em; letter-spacing: 0; display: inline-block;">®</span><span data-mk-comma>,</span><br data-mk-break> Connecting the World Through Goals<span style="font-size: 0.62em; vertical-align: 0.8em; letter-spacing: 0; display: inline-block;">®</span></p>
+      <p style="font-family: 'JetBrains Mono', monospace; font-size: 24px; line-height: 1.52; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(232,239,238,0.52); margin: 48px 0 0;">GOALOOP &mdash; The Goal Market<span style="font-size: 0.62em; vertical-align: 0.8em; letter-spacing: 0; display: inline-block;">®</span><span data-mk-comma>,</span><br data-mk-break> Connecting the World Through Goals<span style="font-size: 0.62em; vertical-align: 0.8em; letter-spacing: 0; display: inline-block;">®</span></p>
     </section>
   </main>
 
@@ -581,5 +595,46 @@ body span[data-mk-mob] { display: none; }
     </div>
   </footer>
 </div>
+<script>
+(function () {
+  var panel = document.getElementById('video-panel'),
+      btn = document.getElementById('video-fs'),
+      label = document.getElementById('video-fs-label');
+  if (!panel || !btn) return;
+  function expanded() { return panel.hasAttribute('data-fs'); }
+  function paint() {
+    var on = expanded() || document.fullscreenElement === panel || document.webkitFullscreenElement === panel;
+    label.textContent = on ? 'Close' : 'Full screen';
+  }
+  function expand() {
+    panel.setAttribute('data-fs', '');
+    document.body.style.overflow = 'hidden';
+    paint();
+  }
+  function collapse() {
+    panel.removeAttribute('data-fs');
+    document.body.style.overflow = '';
+    paint();
+  }
+  btn.addEventListener('click', function () {
+    var native = panel.requestFullscreen || panel.webkitRequestFullscreen;
+    if (document.fullscreenElement === panel || document.webkitFullscreenElement === panel) {
+      (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+      return;
+    }
+    if (expanded()) { collapse(); return; }
+    if (native) {
+      var r = native.call(panel);
+      if (r && r.catch) r.catch(expand); else setTimeout(function () { if (!document.fullscreenElement && !document.webkitFullscreenElement) expand(); }, 120);
+    } else {
+      expand();
+    }
+    paint();
+  });
+  document.addEventListener('fullscreenchange', paint);
+  document.addEventListener('webkitfullscreenchange', paint);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && expanded()) collapse(); });
+})();
+</script>
 </body>
 </html>
