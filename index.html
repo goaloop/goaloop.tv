@@ -340,6 +340,108 @@
 </script>
 </head>
 <body>
+<style>
+/* Mobile portrait layout (added outside <head>; head is unchanged) */
+@media (max-width: 760px) {
+  body > div > main > section:nth-of-type(1) h1 { text-align: center !important; }
+  body > div > main > section:nth-of-type(1) h1 span { width: 0 !important; overflow: visible !important; }
+  body > div > main > section:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) { justify-content: center !important; }
+  body > div > main > section:nth-of-type(1) > div:first-child > div { justify-content: center !important; }
+  body span[data-mk-desk] { display: none !important; }
+  body span[data-mk-mob] { display: inline !important; }
+  body > div > main > section:nth-of-type(1) > div:nth-of-type(2) { padding-left: 0 !important; }
+  body > div > header { padding: 16px 18px 12px !important; gap: 12px !important; }
+  body > div > header > a.brand-link > span:first-child { font-size: 17px !important; letter-spacing: 0.13em !important; }
+  body > div > header > a.brand-link > span:nth-child(2) { font-size: 9px !important; letter-spacing: 0.17em !important; margin-top: 5px !important; }
+  body > div > header > div { gap: 10px !important; }
+  body > div > header > div > span { font-size: 10px !important; letter-spacing: 0.1em !important; }
+  body > div > header .brand-link-g img { height: 24px !important; }
+
+  body > div > div { padding: 14px 18px 0 !important; }
+
+  body > div > main > section:nth-of-type(1) {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 34px !important;
+    padding: 38px 18px 30px !important;
+  }
+  body > div > main > section:nth-of-type(1) h1 { margin-bottom: 22px !important; letter-spacing: 0 !important; }
+  body > div > main > section:nth-of-type(1) p { font-size: 18px !important; max-width: none !important; }
+  body > div > main > section:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) span { font-size: 24px !important; }
+
+  body > div > main > section:nth-of-type(2) { margin: 0 18px !important; }
+  body > div > main > section:nth-of-type(2) > div {
+    grid-template-columns: minmax(0, 1fr) !important;
+    padding: 16px !important;
+    gap: 12px !important;
+  }
+  body > div > main > section:nth-of-type(2) > div > div { padding: 16px 18px !important; }
+  body > div > main > section:nth-of-type(2) > div > div > div { margin-bottom: 12px !important; }
+  body > div > main > section:nth-of-type(2) p { font-size: 17px !important; }
+
+  body > div > main > section:nth-of-type(3) { padding: 48px 18px 28px !important; }
+  body > div > main > section:nth-of-type(3) > div:nth-of-type(2) {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+  }
+  body > div > main > section:nth-of-type(3) > div:nth-of-type(2) > div > div:last-child { padding: 12px 12px !important; font-size: 10px !important; }
+
+  body > div > main > section:nth-of-type(4) { padding: 15.2px 18px 8px !important; }
+  body > div > main > section:nth-of-type(4) > div {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 20px !important;
+  }
+  body > div > main > section:nth-of-type(4) > div > a.brand-link-g,
+  body > div > main > section:nth-of-type(4) > div > p { display: none !important; }
+  body > div > main > section:nth-of-type(4) > div { align-items: center !important; }
+  body > div > main > section:nth-of-type(4) > div > a.brand-link-g img { height: 56px !important; }
+  body > div > main > section:nth-of-type(4) > div > p { font-size: 21px !important; }
+  body > div > main > section:nth-of-type(4) > div > a { margin-left: 0 !important; }
+  body > div > main > section:nth-of-type(4) > p {
+    font-size: 13.3px !important;
+    letter-spacing: 0.1em !important;
+    margin-top: 43.2px !important;
+    overflow-wrap: break-word !important;
+  }
+  body > div > main > section:nth-of-type(4) > p span[data-mk-comma] { display: none !important; }
+  body > div > main > section:nth-of-type(4) > p br[data-mk-break] { display: inline !important; }
+
+  body > div > main > section:nth-of-type(4) > p { text-align: center !important; }
+  body > div > footer > div { padding: 26px 18px 34px !important; gap: 20px 24px !important; justify-content: center !important; }
+  body > div > footer nav span[data-mk-social] { display: block !important; width: 100% !important; height: 0 !important; }
+  body > div > footer nav { margin-left: 0 !important; font-size: 13px !important; gap: 8px 14px !important; justify-content: center !important; width: 100% !important; }
+  body > div > footer > div > div { text-align: center !important; }
+}
+
+/* Baseline: the tagline stays on one line (desktop unchanged) */
+body > div > main > section:nth-of-type(4) > p br[data-mk-break] { display: none; }
+body span[data-mk-mob] { display: none; }
+
+/* Phone landscape (horizontal) */
+@media (orientation: landscape) and (max-height: 520px) {
+  body > div > main > section:nth-of-type(3) { padding-bottom: 16px !important; }
+  body > div > main > section:nth-of-type(4) { padding-top: 34.92px !important; }
+  body > div > main > section:nth-of-type(2) > div {
+    grid-template-columns: minmax(0, 96fr) minmax(0, 84fr) minmax(0, 110fr) !important;
+  }
+  body span[data-mk-desk] { display: none !important; }
+  body span[data-mk-mob] { display: inline !important; }
+  body > div > main > section:nth-of-type(1) > div:nth-of-type(2) { padding-left: 0 !important; }
+  body > div > main > section:nth-of-type(1) {
+    grid-template-columns: minmax(0, 55fr) minmax(0, 45fr) !important;
+  }
+  body > div > main > section:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(3) > div:first-child img {
+    transform: scale(0.847) !important;   /* someday: no vertical offset - middle-aligned like the rest */
+  }
+  body > div > main > section:nth-of-type(3) > div:nth-of-type(2) > div > div:last-child {
+    text-align: center !important;
+    font-size: 10.12px !important;
+  }
+  body > div > main > section:nth-of-type(4) > p span[data-mk-comma] { display: none !important; }
+  body > div > main > section:nth-of-type(4) > p br[data-mk-break] { display: inline !important; }
+  body > div > main > section:nth-of-type(4) > p { line-height: 1.15 !important; }
+}
+</style>
 <div style="background: #080d14; color: #e8efee; font-family: Archivo, Helvetica, sans-serif; min-height: 100vh; padding: 0;">
 
   <header style="display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 22px 40px 12px; border-bottom: 1px solid rgba(232,239,238,0.10);">
@@ -366,19 +468,19 @@
   </div>
 
   <main>
-    <section style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 64px; align-items: start; padding: 81px 40px 43px; max-width: 1360px; margin: 0 auto;">
+    <section style="display: grid; grid-template-columns: minmax(0, 44fr) minmax(0, 56fr); gap: 64px; align-items: start; padding: 81px 40px 43px; max-width: 1360px; margin: 0 auto;">
       <div>
-        <h1 style="font-size: clamp(38px, 4.9vw, 73px); line-height: 1.02; letter-spacing: 0.0135em; font-weight: 800; margin: 0 0 32px; text-wrap: balance;">Every Goal Tells a&nbsp;Story<span style="font-size: 0.36em; font-weight: 600; vertical-align: 0.9em; letter-spacing: 0; margin-left: 0.22em; display: inline-block;">™</span></h1>
-        <p style="font-size: 21px; line-height: 1.5; color: rgba(232,239,238,0.78); margin: 0 0 20px; max-width: 46ch; text-wrap: pretty;">Every goal tells a story and instantly becomes a &lsquo;goal movie&rsquo; on Goaloop &ndash; a Govie&trade;.</p>
-        <p style="font-size: 21px; line-height: 1.5; color: rgba(232,239,238,0.78); margin: 0 0 40px; max-width: 46ch; text-wrap: pretty;">#Govies are shareable and editable, an easy way to let others know of progress toward your goal.</p>
+        <h1 style="font-size: clamp(38px, 4.9vw, 73px); line-height: 1.122; letter-spacing: 0.01516em; font-weight: 800; margin: 0 0 32px; text-wrap: balance;">Every Goal Tells a&nbsp;Story<span style="font-size: 0.36em; font-weight: 600; vertical-align: 0.98em; letter-spacing: 0; margin-left: 0.22em; display: inline-block;">™</span></h1>
+        <p style="font-size: 21px; line-height: 1.5; color: rgba(232,239,238,0.78); margin: 0 0 20px; max-width: 46ch; text-wrap: pretty;">Every goal set instantly becomes a &lsquo;goal movie&rsquo; on Goaloop &mdash; a Govie&trade;.</p>
+        <p style="font-size: 21px; line-height: 1.5; color: rgba(232,239,238,0.78); margin: 0 0 40px; max-width: 46ch; text-wrap: pretty;">#Govies are shareable and editable, an easy way to <span data-mk-desk>let others know of progress toward your goal.</span><span data-mk-mob>share your goal&rsquo;s progress.</span></p>
         <div style="display: flex; flex-wrap: wrap; gap: 14px;">
           <a href="https://goaloop.io" target="_blank" rel="noopener" class="cta-btn" style="font-size: 16px; font-weight: 600; color: #080d14; background: #5fe500; padding: 15px 26px; border-radius: 999px; border: 1.5px solid #5fe500;">Be the First</a>
         </div>
       </div>
       <div style="position: relative;">
         <div style="position: absolute; inset: -14% -10% -18% -10%; background: radial-gradient(closest-side, rgba(95,229,0,0.16), rgba(95,229,0,0)); pointer-events: none;"></div>
-        <div style="position: relative; display: flex; align-items: center; gap: 14px; padding-top: 9px; margin-bottom: 17px;">
-          <span style="font-size: 28px; font-weight: 800; letter-spacing: 0.008em; line-height: 1;">#Selfie? #Govie!</span>
+        <div style="position: relative; display: flex; align-items: center; gap: 14px; padding-top: 9px; margin-bottom: 19.6px;">
+          <span style="font-size: 28px; font-weight: 800; letter-spacing: 0.00864em; line-height: 1;">#Selfie? #Govie!</span>
         </div>
         <div style="position: relative; border: 1px solid rgba(232,239,238,0.14); border-radius: 14px; overflow: hidden; background: #040810;">
           <div style="display: flex; align-items: center; gap: 10px; padding: 12px 16px; border-bottom: 1px solid rgba(232,239,238,0.10); font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(232,239,238,0.45);">
@@ -386,7 +488,7 @@
             Now playing
           </div>
           <div style="position: relative; padding-top: 56.25%;">
-            <iframe src="https://player.vimeo.com/video/1219348076" title="GOALOOP &mdash; What Do You Desire?" allow="autoplay; fullscreen; picture-in-picture" style="position: absolute; inset: 0; width: 100%; height: 100%; border: 0;"></iframe>
+            <iframe src="https://player.vimeo.com/video/1219348076" title="GOALOOP &mdash; What Do You Desire?" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position: absolute; inset: 0; width: 100%; height: 100%; border: 0;"></iframe>
           </div>
         </div>
       </div>
@@ -416,38 +518,41 @@
       <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px;">
         <div style="border: 1px solid rgba(232,239,238,0.12); border-radius: 10px; overflow: hidden; background: #040810;">
           <div style="position: relative; padding-top: 56.25%;">
-            <img src="images/status-underway.png" alt="Goal status symbol: goal is underway" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; padding: 14px; box-sizing: border-box; transform-origin: center top; transform: translateY(0px) scale(1);">
+            <img src="images/status-underway.png" alt="Goal status symbol: goal is underway" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; padding: 14px; box-sizing: border-box; transform-origin: center center; transform: scale(1);">
           </div>
           <div style="padding: 14px 16px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(232,239,238,0.45);">goal is underway</div>
         </div>
         <div style="border: 1px solid rgba(232,239,238,0.12); border-radius: 10px; overflow: hidden; background: #040810;">
           <div style="position: relative; padding-top: 56.25%;">
-            <img src="images/status-hit-a-snag.png" alt="Goal status symbol: goal hit a snag" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; padding: 14px; box-sizing: border-box; transform-origin: center top; transform: translateY(0px) scale(1);">
+            <img src="images/status-hit-a-snag.png" alt="Goal status symbol: goal hit a snag" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; padding: 14px; box-sizing: border-box; transform-origin: center center; transform: scale(1);">
           </div>
           <div style="padding: 14px 16px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(232,239,238,0.45);">goal hit a snag</div>
         </div>
         <div style="border: 1px solid rgba(232,239,238,0.12); border-radius: 10px; overflow: hidden; background: #040810;">
           <div style="position: relative; padding-top: 56.25%;">
-            <img src="images/status-someday.png" alt="Goal status symbol: someday goal" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; padding: 14px; box-sizing: border-box; transform-origin: center top; transform: translateY(17px) scale(0.873);">
+            <img src="images/status-someday-soft.png" alt="Goal status symbol: someday goal" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; padding: 14px; box-sizing: border-box; transform-origin: center center; transform: translateY(0.9%) scale(0.847); filter: brightness(0.91);">
           </div>
           <div style="padding: 14px 16px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(232,239,238,0.45);">someday goal</div>
         </div>
         <div style="border: 1px solid rgba(232,239,238,0.12); border-radius: 10px; overflow: hidden; background: #040810;">
           <div style="position: relative; padding-top: 56.25%;">
-            <img src="images/status-gift-coin.png" alt="Goal status symbol: gift a goal" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; padding: 14px; box-sizing: border-box; transform-origin: center top; transform: translateY(6px) scale(0.972);">
+            <img src="images/status-gift-coin.png" alt="Goal status symbol: gift a goal" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; padding: 14px; box-sizing: border-box; transform-origin: center center; transform: scale(0.977);">
           </div>
           <div style="padding: 14px 16px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(232,239,238,0.45);">gift a goal</div>
         </div>
       </div>
     </section>
 
-    <section style="max-width: 1360px; margin: 0 auto; padding: 48px 40px 16px;">
-      <div style="display: flex; align-items: center; gap: 32px; flex-wrap: wrap;">
-        <img src="images/Goaloop-g-radio-signals-2026.png" alt="Goaloop registered trademark g icon with radio signal waves" style="height: 74px; width: auto; display: block;">
-        <p style="font-size: 24px; line-height: 1.35; margin: 0; max-width: 30ch; font-weight: 600; letter-spacing: -0.01em;">#Selfie? #Govie!</p>
+    <section style="max-width: 1360px; margin: 0 auto; padding: 38.4px 40px 16px;">
+      <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap;">
+        <a href="https://goaloop.io" target="_blank" rel="noopener" class="brand-link-g">
+          <img src="images/Goaloop-g-radio-signals-2026-wide.png" alt="Goaloop registered trademark g icon with radio signal waves" class="g-base" style="height: 74px; width: auto;">
+          <img src="images/Goaloop-g-radio-signals-2026-wide-on-hover-green.png" alt="Goaloop registered trademark g icon with radio signal waves, active" class="g-hover" style="height: 74px; width: auto;">
+        </a>
+        <p style="font-size: 24px; line-height: 1.35; margin: 0; max-width: 30ch; font-weight: 600; letter-spacing: -0.0092em;">#Selfie? #Govie!</p>
         <a href="https://goaloop.io" target="_blank" rel="noopener" class="cta-btn" style="margin-left: auto; font-size: 16px; font-weight: 600; color: #080d14; background: #5fe500; padding: 15px 26px; border-radius: 999px; border: 1.5px solid #5fe500;">Join Goaloop</a>
       </div>
-      <p style="font-family: 'JetBrains Mono', monospace; font-size: 24px; line-height: 1.4; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(232,239,238,0.52); margin: 48px 0 0;">GOALOOP &ndash; The Goal Market<span style="font-size: 0.62em; vertical-align: 0.8em; letter-spacing: 0; display: inline-block;">®</span>, Connecting the World Through Goals<span style="font-size: 0.62em; vertical-align: 0.8em; letter-spacing: 0; display: inline-block;">®</span></p>
+      <p style="font-family: 'JetBrains Mono', monospace; font-size: 24px; line-height: 1.4; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(232,239,238,0.52); margin: 48px 0 0;">GOALOOP &mdash; The Goal Market<span style="font-size: 0.62em; vertical-align: 0.8em; letter-spacing: 0; display: inline-block;">®</span><span data-mk-comma>,</span><br data-mk-break> Connecting the World Through Goals<span style="font-size: 0.62em; vertical-align: 0.8em; letter-spacing: 0; display: inline-block;">®</span></p>
     </section>
   </main>
 
@@ -459,6 +564,7 @@
         <a href="https://www.instagram.com/goaloop/" target="_blank" rel="noopener" class="social-link" style="color: rgba(95,229,0,0.6);">Insta</a>
         <a href="https://x.com/goaloop" target="_blank" rel="noopener" class="social-link" style="color: rgba(95,229,0,0.6);">X</a>
         <a href="https://www.pinterest.com/goaloop/" target="_blank" rel="noopener" class="social-link" style="color: rgba(95,229,0,0.6);">Pinterest</a>
+        <span data-mk-social style="display: none;"></span>
         <a href="https://wellfound.com/company/goaloop/people" target="_blank" rel="noopener" class="social-link" style="color: rgba(95,229,0,0.6);">Wellfound</a>
         <a href="https://www.facebook.com/goaloop" target="_blank" rel="noopener" class="social-link" style="color: rgba(95,229,0,0.6);">Facebook</a>
       </nav>
