@@ -406,7 +406,8 @@
   body > div > main > section:nth-of-type(4) > p span[data-mk-comma] { display: none !important; }
   body > div > main > section:nth-of-type(4) > p br[data-mk-break] { display: inline !important; }
 
-  body > div > main > section:nth-of-type(4) > p { text-align: center !important; }
+  body > div > main > section:nth-of-type(4) > p { text-align: center !important; margin-bottom: 21.6px !important; }
+  body > div > main > section:nth-of-type(3) > div:nth-of-type(2) > div > div:last-child { text-align: center !important; }
   body > div > footer > div { padding: 26px 18px 34px !important; gap: 20px 24px !important; justify-content: center !important; }
   body > div > footer nav span[data-mk-social] { display: block !important; width: 100% !important; height: 0 !important; }
   body > div > footer nav { margin-left: 0 !important; font-size: 13px !important; gap: 8px 14px !important; justify-content: center !important; width: 100% !important; }
@@ -419,6 +420,10 @@ body span[data-mk-mob] { display: none; }
 
 /* Phone landscape (horizontal) */
 @media (orientation: landscape) and (max-height: 520px) {
+  body > div > main > section:nth-of-type(3) > div:nth-of-type(2) {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+  }
   body > div > main > section:nth-of-type(3) { padding-bottom: 16px !important; }
   body > div > main > section:nth-of-type(4) { padding-top: 34.92px !important; }
   body > div > main > section:nth-of-type(2) > div {
